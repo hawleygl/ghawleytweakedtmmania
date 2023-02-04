@@ -1,0 +1,48 @@
+/* ghawley's weapon tweak of tmmania's vault analyzer end-game edition
+ | highlights trash
+ | keeps top 2.5% armor 
+ |    tmmania's update version: #0041
+ |    ghawley's update version: #0001 
+ */ 
+(
+    (
+        (is:weapon -source:dawning -is:exotic -is:masterwork -is:maxpower -is:wishlist -source:solstice -stat:total:>60 -is:locked -is:crafted -deepsight:pattern)
+        or 
+        (
+            is:armor -is:exotic -is:classitem 
+            -(source:raid -is:dupelower -source:dcv)
+            -maxbasestatvalue:any -basestat:total:>=65 -basestat:highest:>=26
+            -(basestat:highest&secondhighest:>=20.5 basestat:secondhighest:>=15)
+            -(basestat:highest&secondhighest&thirdhighest:>=16.666 basestat:secondhighest:>=12)
+            -(basestat:highest&secondhighest&thirdhighest&fourthhighest:>=14.25 basestat:fourthhighest:>=10)
+            -(basestat:highest&secondhighest&thirdhighest&fourthhighest&fifthhighest:>=12.2 basestat:fifthhighest:>=6)
+            -(basestat:highest&secondhighest&thirdhighest&fourthhighest&fifthhighest&sixthhighest:>=10.333 basestat:sixthhighest:>=6)
+        )
+        or
+        (
+            is:classitem energycapacity:<=5 -is:modded -is:locked 
+            -(source:raid -is:dupelower -source:dcv)
+        ) 
+        or 
+        (is:armor is:sunset) 
+        or 
+        (is:armor is:blue 
+          -(name:"war mantis" is:gauntlets)
+        ) 
+        or 
+        (
+            (is:armor or is:weapon)
+            (is:common or is:uncommon)
+        )
+    ) 
+    -(is:tagged -tag:junk) 
+    -is:maxpower 
+    -power:pinnaclecap 
+    -is:inloadout 
+    -is:masterwork 
+    -(is:armor -is:armor2.0) 
+    -(is:armor source:events) 
+    -name:classified
+)
+or
+(tag:junk -is:maxpowerloadout)
