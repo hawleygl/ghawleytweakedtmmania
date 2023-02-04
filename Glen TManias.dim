@@ -1,12 +1,14 @@
-/* ghawley's weapon tweak of tmmania's vault analyzer end-game edition
+/* ghawley's weapon tweak 2 of tmmania's vault analyzer end-game edition
  | highlights trash
  | keeps top 2.5% armor 
  |    tmmania's update version: #0041
- |    ghawley's update version: #0001 
+ |    ghawley's update version: #0002 
  */ 
 (
     (
         (is:weapon -source:dawning -is:exotic -is:masterwork -is:maxpower -is:wishlist -source:solstice -stat:total:>60 -is:locked -is:crafted -deepsight:pattern)
+        or
+        (is:crafteddupe -is:crafted)
         or 
         (
             is:armor -is:exotic -is:classitem 
@@ -26,8 +28,9 @@
         or 
         (is:armor is:sunset) 
         or 
-        (is:armor is:blue 
-          -(name:"war mantis" is:gauntlets)
+        (
+            is:armor is:blue 
+            -(name:"war mantis" is:gauntlets) 
         ) 
         or 
         (
@@ -36,13 +39,13 @@
         )
     ) 
     -(is:tagged -tag:junk) 
-    -is:maxpower 
-    -power:pinnaclecap 
-    -is:inloadout 
-    -is:masterwork 
-    -(is:armor -is:armor2.0) 
-    -(is:armor source:events) 
+    -is:maxpower
+    -power:pinnaclecap
+    -is:inloadout
+    -is:masterwork
+    -(is:armor -is:armor2.0)
+    -(is:armor source:events)
     -name:classified
-)
+) 
 or
 (tag:junk -is:maxpowerloadout)
