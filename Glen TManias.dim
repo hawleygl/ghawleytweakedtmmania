@@ -1,19 +1,41 @@
-/* ghawley's weapon tweak 2 of tmmania's vault analyzer end-game edition
+/* ghawley's weapon tweak 3 of tmmania's vault analyzer end-game edition
  | highlights trash
  | keeps top 2.5% armor 
  |    tmmania's update version: #0041
- |    ghawley's update version: #0002 
+ |    ghawley's update version: #0003
  */ 
 (
     (
-        (is:weapon -source:dawning -is:exotic -is:masterwork -is:maxpower -is:wishlist -source:solstice -stat:total:>60 -is:locked -is:crafted -deepsight:pattern)
+        (
+            is:weapon 
+            -source:dawning 
+            -is:exotic 
+            -is:masterwork 
+            -is:maxpower 
+            -is:wishlist 
+            -source:solstice 
+            -stat:total:>60 
+            -is:locked 
+            -is:crafted 
+        )
         or
-        (is:crafteddupe -is:crafted)
+        (
+            is:patternunlocked 
+            -is:crafted
+        )
         or 
         (
-            is:armor -is:exotic -is:classitem 
-            -(source:raid -is:dupelower -source:dcv)
-            -maxbasestatvalue:any -basestat:total:>=65 -basestat:highest:>=26
+            is:armor
+            -(
+                source:raid 
+                -is:dupelower 
+                -source:dcv
+            )
+            -is:exotic
+            -is:classitem 
+            -maxbasestatvalue:any
+            -basestat:total:>=65 
+            -basestat:highest:>=26
             -(basestat:highest&secondhighest:>=20.5 basestat:secondhighest:>=15)
             -(basestat:highest&secondhighest&thirdhighest:>=16.666 basestat:secondhighest:>=12)
             -(basestat:highest&secondhighest&thirdhighest&fourthhighest:>=14.25 basestat:fourthhighest:>=10)
@@ -22,15 +44,29 @@
         )
         or
         (
-            is:classitem energycapacity:<=5 -is:modded -is:locked 
-            -(source:raid -is:dupelower -source:dcv)
+            is:classitem 
+            energycapacity:<=5 
+            -is:modded 
+            -is:locked 
+            -(
+                source:raid
+                -is:dupelower
+                -source:dcv
+            )
         ) 
         or 
-        (is:armor is:sunset) 
+        (
+            is:armor
+            is:sunset
+        ) 
         or 
         (
-            is:armor is:blue 
-            -(name:"war mantis" is:gauntlets) 
+            is:armor
+            is:blue 
+            -(
+                name:"war mantis" 
+                is:gauntlets
+            ) 
         ) 
         or 
         (
